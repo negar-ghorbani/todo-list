@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>&lt;/salt&gt; :: Shopping wish list</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            transparent: 'transparent',
+            current: 'currentColor',
+            'white': '#ffffff',
+            'sky': {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e'
+            },
+            'rose': {
+              50: '#fff1f2',
+              100: '#ffe4e6',
+              800: '#9f1239',
+              900: '#881337'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+  <link rel="stylesheet" type="text/css" href="./style/wishlist.css">
+  <script defer src="./dist/wishlist.js"></script>
+</head>
+
+<body>
+  <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
+    <div
+      class="bg-white rounded border border-sky-700 shadow-lg shadow-sky-700/40 p-6 m-10 w-full lg:w-3/4 lg:max-w-lg">
+      <div>
+        <h1
+          class="text-sky-700 bg-sky-50 min-w-fit max-w-fit	rounded border border-sky-700 shadow-lg shadow-sky-700/40 p-2 m-1">
+          Register new item
+        </h1>
+        <div class="flex mt-8">
+          <form autocomplete="off">
+            <label for="title" class="text-sky-700 font-bold">Title</label>
+            <input type="text" id="title" data-testid="txtCardTitle"
+              class="text-sky-700 appearance-none border border-sky-700/50 rounded w-full py-2 px-3 mr-4 my-2 text-grey-darker">
+            <label for="description" class="text-sky-700 font-bold">Description</label>
+            <input type="text" id="description"
+              class="text-sky-700 appearance-none border border-sky-700/50 rounded w-full py-2 px-3 mr-4 my-2 text-grey-darker">
+            <button type='button' id="add" data-testid="btnAddCard"
+              class="flex-no-shrink text-sky-100 bg-sky-700 border border-sky-700 shadow-lg shadow-sky-700/40 float-right px-5 py-2 my-4 border-2 rounded border-teal hover:text-sky-900 hover:bg-sky-50">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="wish-list" class="mx-10">
+    <ul id="list" data-testid="cardList"
+      class="h-100 w-full flex flex-col items-center justify-center bg-teal-lightest font-sans">
+    </ul>
+  </div>
+</body>
+
+</html>
